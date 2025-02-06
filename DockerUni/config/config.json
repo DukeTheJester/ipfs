@@ -1,0 +1,68 @@
+{
+    "API": {
+      "HTTPHeaders": {}
+    },
+    "Addresses": {
+      "API": "/ip4/0.0.0.0/tcp/5001",
+      "Gateway": "/ip4/0.0.0.0/tcp/8080",
+      "Swarm": [
+        "/ip4/0.0.0.0/tcp/4001",
+        "/ip6/::/tcp/4001"
+      ]
+    },
+    "AutoNAT":{
+        "Enabled": false
+    },
+    "Bootstrap": [],
+    "Discovery": {
+      "MDNS": {
+        "Enabled": false
+      }
+    },
+    "Routing": {
+      "Type": "none"
+    },
+    "Swarm": {
+      "AutoConnect": false,
+      "DisableNatPortMap": true,
+      "ConnMgr": {
+        "Type": "basic",
+        "LowWater": 50,
+        "HighWater": 200
+      }
+    },
+    "Datastore": {
+      "StorageMax": "10GB",
+      "StorageGCWatermark": 90,
+      "GCPeriod": "1h",
+      "BloomFilterSize": 0,
+    
+        "HashOnRead": false,
+        "Spec": {
+            "mounts": [
+                {
+                "child": {
+                    "path": "blocks",
+                    "shardFunc": "/repo/flatfs/shard/v1/next-to-last/2",
+                    "sync": true,
+                    "type": "flatfs"
+                },
+                "mountpoint": "/blocks",
+                "prefix": "flatfs.datastore",
+                "type": "measure"
+                },
+                {
+                "child": {
+                    "compression": "none",
+                    "path": "datastore",
+                    "type": "levelds"
+                },
+                "mountpoint": "/",
+                "prefix": "leveldb.datastore",
+                "type": "measure"
+                }
+            ],
+            "type": "mount"
+        }
+    }
+  }

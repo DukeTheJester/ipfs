@@ -1,0 +1,176 @@
+version: '3.8'
+
+services:
+
+  ipfs-node0:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node0
+    ports:
+      - "4001:4001"
+      - "5001:5001"
+      - "8080:8080"
+    volumes:
+      - ./data/ipfs0:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+
+  ipfs-node1:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node1
+    ports:
+      - "4002:4001"
+      - "5002:5001"
+      - "8081:8080"
+    volumes:
+      - ./data/ipfs1:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+
+  ipfs-node2:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node2
+    ports:
+      - "4003:4001"
+      - "5003:5001"
+      - "8082:8080"
+    volumes:
+      - ./data/ipfs2:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node3:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node3
+    ports:
+      - "4004:4001"
+      - "5004:5001"
+      - "8083:8080"
+    volumes:
+      - ./data/ipfs3:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node4:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node4
+    ports:
+      - "4005:4001"
+      - "5005:5001"
+      - "8084:8080"
+    volumes:
+      - ./data/ipfs4:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+
+  ipfs-node5:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node5
+    ports:
+      - "4006:4001"
+      - "5006:5001"
+      - "8085:8080"
+    volumes:
+      - ./data/ipfs5:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node6:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node6
+    ports:
+      - "4007:4001"
+      - "5007:5001"
+      - "8086:8080"
+    volumes:
+      - ./data/ipfs6:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node7:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node7
+    ports:
+      - "4008:4001"
+      - "5008:5001"
+      - "8087:8080"
+    volumes:
+      - ./data/ipfs7:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node8:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node8
+    ports:
+      - "4009:4001"
+      - "5009:5001"
+      - "8088:8080"
+    volumes:
+      - ./data/ipfs8:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node9:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node9
+    ports:
+      - "4010:4001"
+      - "5010:5001"
+      - "8089:8080"
+    volumes:
+      - ./data/ipfs9:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node10:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node10
+    ports:
+      - "4011:4001"
+      - "5011:5001"
+      - "8090:8080"
+    volumes:
+      - ./data/ipfs10:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+    
+  ipfs-node11:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs-node11
+    ports:
+      - "4012:4001"
+      - "5012:5001"
+      - "8091:8080"
+    volumes:
+      - ./data/ipfs11:/data/ipfs
+      - ./swarm.key:/data/ipfs/swarm.key
+    command: ["daemon"]
+    networks:
+      - privateKreuzer
+
+networks:
+  privateKreuzer:
+    driver: bridge  # Use bridge driver to limit scope to this network
+    #internal: true 

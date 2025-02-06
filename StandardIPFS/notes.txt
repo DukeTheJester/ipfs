@@ -1,0 +1,5 @@
+!Notice!
+
+This Directory only contains the innermost kubomaster Directory as well as config.json
+
+By itself this Directory might not run but it contains all changes we made.
